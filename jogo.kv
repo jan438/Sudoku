@@ -8,17 +8,17 @@
 	Novo_jogo:
 		name: 'novojogo'
 
-	Recordes:
-		name: 'recordes'
+	Records:
+		name: 'records'
 
-	Recordes_facil:
-		name: 'recordes_facil'
+	Records_facil:
+		name: 'records_facil'
 
-	Recordes_medio:
-		name: 'recordes_medio'
+	Records_medio:
+		name: 'records_medio'
 
-	Recordes_dificil:
-		name: 'recordes_dificil'
+	Records_dificil:
+		name: 'records_dificil'
 
 # =================================================================================================================
 <Menu>: #Menu inicial
@@ -50,14 +50,14 @@
 					app.root.transition.direction = 'left'
 					app.root.current='dificuldade'
 			Button:
-				text: 'Recordes'
+				text: 'Records'
 				color: (0.913, 0.945, 0.968, 1)
 				size_hint: 1,  None
 				size: 0, '40sp'
 				background_color: (0.133, 0.454, 0.647)
 				on_release:
 					app.root.transition.direction = 'left'
-					app.root.current='recordes'
+					app.root.current='records'
 			Button:
 				text: 'Remover Anúncios'
 				color: (0.913, 0.945, 0.968, 1)
@@ -634,8 +634,8 @@
 				background_color: (0.133, 0.454, 0.647)
 				on_release: root.verificar()
 #=================================
-<Recordes>:
-	name: 'recordes'
+<Records>:
+	name: 'records'
 
 	BoxLayout:
 		orientation: 'vertical'
@@ -667,7 +667,7 @@
 				background_color: (0.133, 0.454, 0.647)
 				on_release:
 					app.root.transition.direction = 'left'
-					app.root.current='recordes_facil'
+					app.root.current='records_facil'
 			Button:
 				size_hint: 1, None
 				size: 0, '40sp'
@@ -677,7 +677,7 @@
 				background_color: (0.133, 0.454, 0.647)
 				on_release:
 					app.root.transition.direction = 'left'
-					app.root.current='recordes_medio'
+					app.root.current='records_medio'
 			Button:
 				size_hint: 1, None
 				size: 0, '40sp'
@@ -686,12 +686,12 @@
 				background_color: (0.133, 0.454, 0.647)
 				on_release:
 					app.root.transition.direction = 'left'
-					app.root.current='recordes_dificil'
+					app.root.current='records_dificil'
 
 # =================================================================================================================
-<Recordes_facil>:
-	name: 'recordes_facil'
-	BoxLayout: #Página dos recordes
+<Records_facil>:
+	name: 'records_facil'
+	BoxLayout: #Página dos records
 		orientation: 'vertical'
 		id: tela_completa
 		spacing: '2sp'
@@ -708,7 +708,7 @@
 					title: 'Sudoku'
 					on_release:
 						app.root.transition.direction = 'right'
-						app.root.current='recordes'
+						app.root.current='records'
 		BoxLayout:
 			id: cabecalho
 			size_hint: 1, 1
@@ -742,9 +742,9 @@
 			spacing: '2sp'
 
 # =================================================================================================================
-<Recordes_medio>:
-	name: 'recordes_medio'
-	BoxLayout: #Página dos recordes
+<Records_medio>:
+	name: 'records_medio'
+	BoxLayout: #Página dos records
 		orientation: 'vertical'
 		id: tela_completa
 		spacing: '2sp'
@@ -761,7 +761,7 @@
 					title: 'Sudoku'
 					on_release:
 						app.root.transition.direction = 'right'
-						app.root.current='recordes'
+						app.root.current='records'
 		BoxLayout:
 			id: cabecalho
 			size_hint: 1, 1
@@ -795,9 +795,9 @@
 			spacing: '2sp'
 
 # =================================================================================================================
-<Recordes_dificil>:
-	name: 'recordes_dificil'
-	BoxLayout: #Página dos recordes
+<Records_dificil>:
+	name: 'records_dificil'
+	BoxLayout: #Página dos records
 		orientation: 'vertical'
 		id: tela_completa
 		spacing: '2sp'
@@ -814,7 +814,7 @@
 					title: 'Sudoku'
 					on_release:
 						app.root.transition.direction = 'right'
-						app.root.current='recordes'
+						app.root.current='records'
 		BoxLayout:
 			id: cabecalho
 			size_hint: 1, 1

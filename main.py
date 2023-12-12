@@ -44,7 +44,7 @@ class Novo_jogo(Screen):
         super(Screen, self).__init__(**kwargs)
         self.cronometro = 0
         pass
-        self.recorde = Recordes()
+        self.recorde = Records()
 
     def facil(self, *args):
         global dificuldade
@@ -309,26 +309,26 @@ class Novo_jogo(Screen):
             vp.open()
 
 
-# ================================================== Recordes =====================================================
-class Recordes(Screen):
+# ================================================== Records =====================================================
+class Records(Screen):
     def __init__(self, **kwargs):
         super(Screen, self).__init__(**kwargs)
         self.lista_jogadores = []
         self.salvos = []
         pass
 
-    # Mudando pra tela dos recordes
+    # Mudando pra tela dos records
     def finalizado(self, *args):
         global dificuldade
         self.inserir_nr()
         App.get_running_app().root.transition.direction = 'left'
 
         if dificuldade == 'facil':
-            App.get_running_app().root.current = 'recordes_facil'
+            App.get_running_app().root.current = 'records_facil'
         elif dificuldade == 'medio':
-            App.get_running_app().root.current = 'recordes_medio'
+            App.get_running_app().root.current = 'records_medio'
         elif dificuldade == 'dificil':
-            App.get_running_app().root.current = 'recordes_dificil'
+            App.get_running_app().root.current = 'records_dificil'
 
     # Para inserir um novo recorde
     def inserir_nr(self, *args):
@@ -340,15 +340,15 @@ class Recordes(Screen):
 
         try:
             if dificuldade == 'facil':
-                # Carregando recordes facil
+                # Carregando records facil
                 with open('dados.json', 'r') as dados:
                     salvos = json.load(dados)
             elif dificuldade == 'medio':
-                # Carregando recordes medio
+                # Carregando records medio
                 with open('dados2.json', 'r') as dados:
                     salvos = json.load(dados)
             elif dificuldade == 'dificil':
-                # Carregando recordes dificil
+                # Carregando records dificil
                 with open('dados3.json', 'r') as dados:
                     salvos = json.load(dados)
 
@@ -370,7 +370,7 @@ class Recordes(Screen):
                 lista_nome = ['Venis', '', '', '', '', '', '', '', '', '']
                 lista_tempo = ['00:13:23', '', '', '', '', '', '', '', '', '']
 
-        c = 0  # Comparando o resultado com os recordes
+        c = 0  # Comparando o resultado com os records
         for i in lista_tempo:
             if i == '':
                 ti = 0
@@ -395,7 +395,7 @@ class Recordes(Screen):
                 break
             c += 1
 
-        # Lista de dados dos recordes
+        # Lista de dados dos records
         salvos = [
             lista_rank,
             lista_nome,
@@ -415,16 +415,16 @@ class Recordes(Screen):
             with open('dados3.json', 'w') as dados:
                 json.dump(salvos, dados)
 
-    # Carregando os dados nos recordes
+    # Carregando os dados nos records
     pass
 
 
 # =================================================================================================================
-class Recordes_facil(Screen):
+class Records_facil(Screen):
     def __init__(self, **kwargs):
         super(Screen, self).__init__(**kwargs)
         pass
-        self.cr = Recordes()
+        self.cr = Records()
 
     def carregar_dados(self, *args):
         try:
@@ -471,13 +471,13 @@ class Recordes_facil(Screen):
             self.ids.rank.add_widget(novo_jogador)
             c += 1
 
-    # Carregar os recordes na página
+    # Carregar os records na página
     def on_pre_enter(self, *args):
         global dificuldade
         dificuldade = 'facil'
         self.carregar_dados()
 
-    # Ao sair da página salvar os recordes
+    # Ao sair da página salvar os records
     def on_leave(self, *args):
         try:
             with open('dados.json', 'r') as dados:
@@ -491,11 +491,11 @@ class Recordes_facil(Screen):
 
 
 # =================================================================================================================
-class Recordes_medio(Screen):
+class Records_medio(Screen):
     def __init__(self, **kwargs):
         super(Screen, self).__init__(**kwargs)
         pass
-        self.cr = Recordes()
+        self.cr = Records()
 
     def carregar_dados(self, *args):
         global dificuldade
@@ -544,13 +544,13 @@ class Recordes_medio(Screen):
             self.ids.rank.add_widget(novo_jogador)
             c += 1
 
-    # Carregar os recordes na página
+    # Carregar os records na página
     def on_pre_enter(self, *args):
         global dificuldade
         dificuldade = 'medio'
         self.carregar_dados()
 
-    # Ao sair da página salvar os recordes
+    # Ao sair da página salvar os records
     def on_leave(self, *args):
         try:
             with open('dados2.json', 'r') as dados:
@@ -564,11 +564,11 @@ class Recordes_medio(Screen):
 
 
 # =================================================================================================================
-class Recordes_dificil(Screen):
+class Records_dificil(Screen):
     def __init__(self, **kwargs):
         super(Screen, self).__init__(**kwargs)
         pass
-        self.cr = Recordes()
+        self.cr = Records()
 
     def carregar_dados(self, *args):
         global dificuldade
@@ -618,13 +618,13 @@ class Recordes_dificil(Screen):
             self.ids.rank.add_widget(novo_jogador)
             c += 1
 
-    # Carregar os recordes na página
+    # Carregar os records na página
     def on_pre_enter(self, *args):
         global dificuldade
         dificuldade = 'dificil'
         self.carregar_dados()
 
-    # Ao sair da página salvar os recordes
+    # Ao sair da página salvar os records
     def on_leave(self, *args):
         try:
             with open('dados3.json', 'r') as dados:
