@@ -177,12 +177,12 @@ class Novo_jogo(Screen):
 
         i.open()
 
-    # Para não iniciar um novo jogo de vez
+    # Para não beginnen um nieuw spel de vez
     def pop_novojogo(self, *args):
         boxnj = BoxLayout()
 
         nj = Popup(
-            title='Iniciar novo jogo?',
+            title='Nieuw spel beginnen?',
             background_color=(0.133, 0.454, 0.647, 1),
             content=boxnj,
             size_hint=(None, None),
