@@ -161,13 +161,13 @@ class Novo_jogo(Screen):
             i.dismiss()
 
         i_sim = Button(
-            text='sim',
+            text='ja',
             color=(0.913, 0.945, 0.968, 1),
             background_color=(0.133, 0.454, 0.647, 1),
             on_release=voltar_inicio)
 
         i_nao = Button(
-            text='não',
+            text='nee',
             color=(0.913, 0.945, 0.968, 1),
             background_color=(0.133, 0.454, 0.647, 1),
             on_release=i.dismiss)
