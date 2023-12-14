@@ -2,6 +2,7 @@ from Sudoku import sudoku, sudoku_i, verificar_sudoku
 from c_int import cint
 import json
 from kivy.app import App
+from kivy.core.window import Window
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.popup import Popup
@@ -668,5 +669,10 @@ class Jogo(App):
         self.icon = 'images/sudoku.png'
         return Ukivy()
 
+    def close_application(self):
+        # closing application
+        App.get_running_app().stop()
+        # removing window
+        Window.close()
 
 Jogo().run()
