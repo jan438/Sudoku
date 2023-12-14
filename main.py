@@ -149,7 +149,7 @@ class Novo_jogo(Screen):
         box_i = BoxLayout()
 
         i = Popup(
-            title='Ir para o início?',
+            title='Ga naar het begin?',
             background_color=(0.133, 0.454, 0.647, 1),
             content=box_i,
             size_hint=(None, None),
